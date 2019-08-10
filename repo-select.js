@@ -33,18 +33,18 @@ const x = {
 // 	exec(`echo ${currentItem} >> test-file.txt`)
 // }
 
-var file = fs.readFileSync('test-File.json', 'utf8')
+var file = fs.readFileSync(filepathofpack, 'utf8')
 // console.log(JSON.stringify(file).red)
-var redItem = JSON.parse(file).red
+// var redItem = JSON.parse(file).red
 // console.log(file)
-JSON.parse(file).red = 'New Red'
+// JSON.parse(file).red = 'New Red'
 const newFile = JSON.parse(file)
-newFile.red = 'blast'
+newFile.title = 'blast off'
 console.log(newFile)
 
 // console.log(JSON.parse(file).red)
-fs.writeFile('test-File.json', JSON.stringify(newFile, null, 4), err => {
-	err ? console.error(err) : console.log('save')
+fs.writeFile(filepathofpack, JSON.stringify(newFile, null, 4), err => {
+	err ? console.error(err) : console.log('saved')
 })
 // console.log(file)
 // console.log(process.cwd())
